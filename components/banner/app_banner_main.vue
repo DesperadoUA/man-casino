@@ -1,0 +1,134 @@
+<template>
+  <section class="main_banner">
+            <div class="container banner_container">
+                <div class="banner_wrapper">
+                    <div class="banner_item"
+                         v-for="(item, index) in value" :key="index"
+                    >
+                        <div class="banner_item_box">
+                            <div class="banner_item_box_left">
+                                <img :src="item.thumbnail"
+                                     class="banner_item_thumbnail" />
+                            </div>
+                            <div class="banner_item_box_right">
+                                <div class="banner_item_title">
+                                    {{item.title}}
+                                </div>
+                                <div class="banner_item_short_desc">
+                                    {{item.short_desc}}
+                                </div>
+                                <a :href="item.permalink" target="_blank"
+                                   class="banner_item_permalink">
+                                    <img src="/img/telega.png" class="banner_item_img">
+                                    Подписаться
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  </section>
+</template>
+
+<script>
+    export default {
+        name: "app_banner",
+        data(){
+            return {
+                value: [
+                    {
+                    	thumbnail: '/img/bonus_1.png',
+                        title: 'Розыгрыш PS5',
+                        short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
+                        permalink: '/telega-1'
+                    },
+					{
+						thumbnail: '/img/bonus_2.png',
+						title: 'Забери виски Jack Daniel’s ',
+						short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
+						permalink: '/telega-2'
+					},
+					{
+						thumbnail: '/img/bonus_1.png',
+						title: 'Розыгрыш PS5',
+						short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
+						permalink: '/telega-3'
+					}
+                ]
+            }
+        },
+    }
+</script>
+
+<style>
+    .main_banner {
+        background:  linear-gradient(91.65deg, #F6CEB5 0%, #E1BDB9 12.97%, #AB8BC1 38.11%, #7B62C2 64.42%, #6642C0 86.94%, #603BBF 102.2%);
+        height: 330px;
+        display: flex;
+        align-items: center;
+    }
+    .banner_item {
+        width: 524px;
+        height: 170px;
+        padding: 0px 12px;
+        min-width: 524px;
+    }
+    .banner_container {
+        overflow: visible;
+    }
+    .banner_wrapper {
+        margin-left: -200px;
+    }
+    .banner_wrapper {
+        display: flex;
+    }
+    .banner_item_box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: var(--strong-blue);
+        overflow: hidden;
+        border-radius: 4px;
+    }
+    .banner_item_box_left, .banner_item_box_right {
+        width: 50%;
+    }
+    .banner_item_thumbnail {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .banner_item_box_right {
+        padding: 20px;
+    }
+    .banner_item_title {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 16px;
+        line-height: 17px;
+        color: var(--white);
+        font-family: var(--font-bold);
+    }
+    .banner_item_short_desc {
+        height: 65px;
+        overflow: hidden;
+        color: var(--light-blue);
+        margin-top: 10px;
+        font-size: 14px;
+        font-family: var(--font);
+    }
+    .banner_item_permalink {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        border-radius: 4px;
+        border: 1px solid var(--blue);
+        color: var(--white);
+        text-decoration: none;
+        margin-top: 5px;
+        font-family: var(--font);
+    }
+    .banner_item_img {
+        margin-right: 5px;
+    }
+</style>

@@ -1,0 +1,118 @@
+<template>
+    <section class="top_bonuses">
+        <div class="container">
+            <h2 class="top_bonuses_title" v-if="title">{{title}}</h2>
+            <div class="top_bonuses_wrapper">
+                <div class="top_bonuses_item"
+                    v-for="(item, index) in value" :key="index"
+                >
+                    <div class="top_bonuses_item_thumbnail">
+                        <img :src="item.thumbnail" loading="lazy" width="145" height="110">
+                    </div>
+                    <div class="top_bonuses_item_title">
+                        {{item.title}}
+                    </div>
+                    <div class="top_bonuses_item_bonus_value">
+                        {{item.sub_title}} : <span class="color-gold">{{item.value}}</span>
+                    </div>
+                    <div class="top_bonuses_item_short_desc">
+                        {{item.short_desc}}
+                    </div>
+                    <button class="top_bonuses_item_button">
+                        Получить бонус
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<script>
+	export default {
+		name: "app_top_bonuses",
+        props: {
+			value: {
+				type: Array,
+                default: [],
+            },
+            title: {
+				type: String,
+                default: undefined
+            }
+        }
+	}
+</script>
+
+<style scoped>
+.top_bonuses {
+    padding: 30px 0px;
+    background: var(--light-black);
+}
+    .top_bonuses_title {
+        font-family: var(--font);
+        color: var(--white);
+        margin-bottom: 22px;
+        font-size: 28px;
+    }
+    .top_bonuses_item {
+        width: 270px;
+        background: var(--strong-blue);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .top_bonuses_wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    .top_bonuses_item_thumbnail {
+        padding: 10px;
+        text-align: center;
+    }
+    .top_bonuses_item_title {
+        padding: 0px 5px 15px;
+        font-family: var(--font);
+        font-size: 16px;
+        color: var(--white);
+        text-align: center;
+        background: var(--strong-blue);
+    }
+    .top_bonuses_item_bonus_value {
+        text-align: center;
+        background: var(--fiolet);
+        padding: 15px 10px 5px 10px;
+        color: var(--white);
+        font-family: var(--font);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .top_bonuses_item_bonus_value span {
+        display: block;
+        font-weight: bolder;
+    }
+    .top_bonuses_item_short_desc {
+        background: var(--fiolet);
+        padding: 5px 15px;
+        color: var(--white);
+        font-family: var(--font);
+        font-size: 12px;
+        height: 95px;
+        overflow: hidden;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        z-index: 2;
+        position: relative;
+    }
+    .top_bonuses_item_button {
+        width: 100%;
+        padding: 25px 15px 15px 15px;
+        background: var(--green);
+        font-family: var(--font);
+        text-transform: uppercase;
+        border: none;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        margin-top: -10px;
+        cursor: pointer;
+    }
+</style>
