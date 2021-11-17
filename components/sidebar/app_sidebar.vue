@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
-      <div class="sidebar_item">Автор обзора: <span>{{author}}</span></div>
-      <div class="sidebar_item">Дата публикации: {{date | dateSlice}}</div>
+      <div class="sidebar_item">Автор обзора: <span class="color-gold">{{author}}</span></div>
+      <div class="sidebar_item">{{date | dateSlice}}</div>
   </aside>
 </template>
 <script>
@@ -32,7 +32,7 @@
    font-size: 12px;
    line-height: 150.7%;
    text-transform: uppercase;
-   color: var(--light-black);
+   color: var(--light-blue);
    margin-bottom: 10px;
    border-bottom: 1px solid var(--gray);
    padding-bottom: 5px;

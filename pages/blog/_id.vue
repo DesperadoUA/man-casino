@@ -2,9 +2,11 @@
   <main>
       <app_banner />
       <app_breadcrumb  :value="data.body.breadcrumbs" />
-    <section>
+    <section class="bg-strong-blue">
         <div class="container blog_section">
             <div class="blog_section_left">
+                <app_h1 :value="data.body.h1" />
+                <app_thumbnail :value="data.body" />
                 <app_content :value="data.body.content" />
             </div>
             <div class="blog_section_right">
@@ -23,10 +25,12 @@
     import app_breadcrumb from '~/components/breadcrumb/app_breadcrumb'
     import app_sidebar from '~/components/sidebar/app_sidebar'
 	import app_banner from '~/components/banner/app_banner_main'
+    import app_h1 from '~/components/h1/app-h1'
+    import app_thumbnail from '~/components/thumbnail/app_thumbnail'
     import config from '~/config/index'
     export default {
         name: "app_single_blog",
-        components: {app_banner, app_content, app_breadcrumb, app_sidebar},
+        components: {app_banner, app_content, app_breadcrumb, app_sidebar, app_h1, app_thumbnail},
         data: () => {
             return {
                data: {},
