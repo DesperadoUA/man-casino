@@ -107,4 +107,12 @@
     .casino_top_list li a {
         color: var(--white);
     }
+@media (min-width: 320px) and (max-width: 767px) {
+    .casino_top_desc_row {
+        flex-wrap: wrap;
+    }
+    .casino_top_desc, .casino_top_list {
+        width: 100%;
+    }
+}
 </style>

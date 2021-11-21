@@ -1,6 +1,6 @@
 <template>
     <section class="top_bonuses">
-        <div class="container">
+        <div class="container top_bonuses_container">
             <h2 class="top_bonuses_title" v-if="title">{{title}}</h2>
             <div class="top_bonuses_wrapper">
                 <div class="top_bonuses_item"
@@ -47,6 +47,7 @@
 .top_bonuses {
     padding: 30px 0px;
     background: var(--light-black);
+    overflow: hidden;
 }
     .top_bonuses_title {
         font-family: var(--font);
@@ -114,5 +115,39 @@
         z-index: 1;
         margin-top: -10px;
         cursor: pointer;
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .top_bonuses_title {
+            text-align: center;
+            font-size: 28px;
+        }
+        .top_bonuses_wrapper {
+            overflow-x: scroll;
+            margin-right: 30px;
+            box-sizing: border-box;
+        }
+        .top_bonuses_item {
+            min-width: 270px;
+            margin-right: 20px;
+        }
+        .top_bonuses_item:last-child {
+            margin-right: 0px;
+        }
+        .top_bonuses_container {
+            max-width: 100%;
+            padding-left: 15px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .top_bonuses_wrapper {
+            overflow-x: scroll;
+        }
+        .top_bonuses_item {
+            min-width: 270px;
+            margin-right: 20px;
+        }
+        .top_bonuses_item:last-child {
+            margin-right: 0px;
+        }
     }
 </style>

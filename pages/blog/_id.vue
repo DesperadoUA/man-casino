@@ -229,4 +229,12 @@
            width: 100%;
        }
    }
+   @media (min-width: 768px) and (max-width: 1200px) {
+       .blog_section {
+           flex-wrap: wrap;
+       }
+       .blog_section_left, .blog_section_right {
+           width: 100%;
+       }
+   }
 </style>

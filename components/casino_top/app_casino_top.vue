@@ -145,8 +145,6 @@
         font-family: var(--font-bold);
         font-style: normal;
         font-size: 12px;
-        line-height: 23px;
-        text-align: center;
         color: var(--black);
         text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
         text-decoration: none;
@@ -189,6 +187,41 @@
     @media (min-width: 320px) and (max-width: 767px) {
         .casino_top_wrapper {
             flex-wrap: wrap;
+            justify-content: center;
+        }
+        .casino_top_title {
+            width: 100%;
+            text-align: center;
+        }
+        .casino_top_title h1 {
+            text-align: center;
+        }
+        .casino_top_bonus {
+            width: 48%;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .casino_top_title {
+            width: 75%;
+            box-sizing: border-box;
+            padding-right: 0px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .casino_top_thumbnail {
+            width: 25%;
+        }
+        .casino_top_wrapper {
+            flex-wrap: wrap;
+        }
+        .casino_top_bonus {
+            width: 48%;
+        }
+        .casino_top_title h1 {
+            width: 100%;
+        }
+        .casino_top_license, .casino_item_buttons_box {
+            width: 50%;
         }
     }
 </style>

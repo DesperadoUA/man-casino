@@ -1,6 +1,6 @@
 <template>
   <section :class="'content casino_table_wrapper '+bg">
-      <div class="container">
+      <div class="container casino_table_container">
           <h2 v-if="title" class="casino_table_title">{{title}}</h2>
           <div class="casino_item" v-for="item in currentPosts" :key="item.id">
               <div class="casino_item_thumbnail">
@@ -246,42 +246,113 @@
     height: 15px;
 }
  @media (min-width: 320px) and (max-width: 767px) {
-     .casino_item_packet_item {
-         width: 90%;
-     }
-     .btn_ref {
-         max-width: 50%;
-         margin-bottom: 0px;
+    .casino_table_title {
+        text-align: center;
+        font-size: 26px;
+    }
+    .casino_item {
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .casino_item_thumbnail {
+        width: 100%;
+    }
+    .casino_item_rating {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid var(--white-opacity-max);
+    }
+    .casino_item_short_desc {
+        display: none;
+    }
+    .casino_item_packet {
+        width: 50%;
+        padding: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .casino_item_packet_item {
+        min-width: auto;
+        width: 100%;
+    }
+    .casino_item_weiger {
+        width: 50%;
+        padding: 10px;
+    }
+    .casino_item_buttons {
+        width: 100%;
+        padding: 0px;
+    }
+    .casino_item_buttons_box {
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .btn_ref {
+        width: 100%;
+        margin-bottom: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .casino_item_button_licensed {
+        padding: 10px;
+    }
+ }
+ @media (min-width: 768px) and (max-width: 1200px) {
+     .casino_table_title {
+         width: 100%;
      }
      .casino_item {
          flex-wrap: wrap;
+         margin-bottom: 20px;
+         width: 48%;
      }
      .casino_item_thumbnail {
          width: 100%;
-         text-align: center;
      }
-     .casino_item_column {
+     .casino_item_rating {
          width: 100%;
-         justify-content: center;
          text-align: center;
-         padding: 10px 10px;
+         border-bottom: 1px solid var(--white-opacity-max);
+     }
+     .casino_item_short_desc {
+         display: none;
+     }
+     .casino_item_packet {
+         width: 50%;
+         padding: 10px;
+         border-bottom-left-radius: 10px;
+     }
+     .casino_item_packet_item {
+         min-width: auto;
+         width: 100%;
+     }
+     .casino_item_weiger {
+         width: 50%;
+         padding: 10px;
+     }
+     .casino_item_buttons {
+         width: 100%;
+         padding: 0px;
      }
      .casino_item_buttons_box {
-         justify-content: space-between;
+         flex-direction: column-reverse;
          width: 100%;
      }
-     .casino_item_buttons  {
-        padding: 3px;
-     }
-     .casino_item_buttons_box a {
-         width: 50%;
+     .btn_ref {
+         width: 100%;
          margin-bottom: 0px;
-     }
-     .casino_item_buttons_box .btn_ref {
+         border-top-left-radius: 0px;
          border-top-right-radius: 0px;
-         border-bottom-right-radius: 0px;
-         border-right: 1px solid var(--white);
      }
-
+     .casino_item_button_licensed {
+         padding: 10px;
+     }
+     .casino_table_container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+     }
+     .casino_table_btn_wrapper {
+         width: 100%;
+     }
  }
 </style>

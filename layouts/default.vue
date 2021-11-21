@@ -96,10 +96,11 @@
     border: none!important;
   }
 /* Content */
-.content {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      color: var(--light-blue);
+  .content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: var(--light-blue);
+    overflow: hidden;
   }
   .content h2, .content h3 {
       margin: 20px 0px;
@@ -196,8 +197,14 @@ table th {
 
 table {
     border: 2px solid var(--gold);
-    border-radius: 4px;
-  margin-bottom: 20px;
+    overflow: auto;
+  box-sizing: border-box;
+  line-height: 1.6;
+  box-shadow: 0 2px 14px rgba(4,0,26,.15);
+  border-spacing: 0;
+  border-radius: 14px;
+  display: block;
+  width: 100%;
 }
 .content table ol {
     margin-left: 5px;

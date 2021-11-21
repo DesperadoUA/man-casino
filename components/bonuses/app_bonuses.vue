@@ -51,6 +51,9 @@
  }
 
  @media (min-width: 320px) and (max-width: 767px) {
-
+    .bonus_item {
+        width: 100%;
+        justify-content: center;
+    }
  }
 </style>

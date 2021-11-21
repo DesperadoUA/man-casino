@@ -61,6 +61,7 @@
     .breadcrumb-list {
         list-style: none;
         display: flex;
+        flex-wrap: wrap;
     }
     .breadcrumb-item {
         margin-right: 8px;

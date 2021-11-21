@@ -1,6 +1,6 @@
 <template>
     <nav class="menu">
-        <div class="menu_item" v-for="(item, index) in value" :key="index">
+        <div :class="item | menuItemClass" v-for="(item, index) in value" :key="index">
             <NuxtLink :to="item.permalink" class="menu_item_link">{{item.title}}</NuxtLink>
             <div class="dropdown_menu" v-if="item.child.length !== 0">
                 <nav class="menu_box">
@@ -37,6 +37,16 @@
 							{title: 'Casino 7', 'permalink': '/link-7'},
 							{title: 'Casino 8', 'permalink': '/link-8'},
 							{title: 'Casino 9', 'permalink': '/link-9'},
+							{title: 'Casino 10', 'permalink': '/link-10'},
+							{title: 'Casino 1', 'permalink': '/casino/slotoking/'},
+							{title: 'Casino 2', 'permalink': '/link-2'},
+							{title: 'Casino 3', 'permalink': '/link-3'},
+							{title: 'Casino 4', 'permalink': '/link-4'},
+							{title: 'Casino 5', 'permalink': '/link-5'},
+							{title: 'Casino 6', 'permalink': '/link-6'},
+							{title: 'Casino 7', 'permalink': '/link-7'},
+							{title: 'Casino 8', 'permalink': '/link-8'},
+							{title: 'Casino 9', 'permalink': '/link-9'},
 							{title: 'Casino 10', 'permalink': '/link-10'}
                         ]
                     },
@@ -65,6 +75,12 @@
 							{title:'payment', permalink: '/payment/visa/'}
                         ]}
                 ]
+            }
+        },
+        filters: {
+			menuItemClass(item){
+				if(item.child.length === 0) return 'menu_item'
+                else return 'menu_item dropdown'
             }
         }
 	}
@@ -120,7 +136,7 @@
         left:-10px;
         height: 470px;
         width: 220px;
-        overflow:hidden;
+        overflow-y:scroll;
         background: var(--blue-opacity);
         border: 1px solid var(--gray);
         box-sizing: border-box;
@@ -140,5 +156,63 @@
     }
     ::-webkit-scrollbar-track-piece {
         background-color:#2a3950
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .menu {
+            display: block;
+            margin-top: 20px;
+        }
+        .menu_item {
+            position: relative;
+        }
+        .dropdown:after {
+            content: "";
+            width: 10px;
+            height: 6px;
+            position: absolute;
+            background: url("/img/triangle.png") no-repeat;
+            right: -10px;
+            top:15px;
+        }
+        .dropdown_menu {
+            position: static;
+            height: 270px;
+            z-index: 11;
+            overflow-y: scroll;
+            width: 200px;
+            margin-top: 10px;
+        }
+        .menu_box {
+            overflow-y: initial;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .menu {
+            display: block;
+            margin-top: 20px;
+        }
+        .menu_item {
+            position: relative;
+        }
+        .dropdown:after {
+            content: "";
+            width: 10px;
+            height: 6px;
+            position: absolute;
+            background: url("/img/triangle.png") no-repeat;
+            right: -10px;
+            top:15px;
+        }
+        .dropdown_menu {
+            position: static;
+            height: 270px;
+            z-index: 11;
+            overflow-y: scroll;
+            width: 200px;
+            margin-top: 10px;
+        }
+        .menu_box {
+            overflow-y: initial;
+        }
     }
 </style>

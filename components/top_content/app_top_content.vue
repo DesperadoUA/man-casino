@@ -59,5 +59,8 @@
     .top_content_left, .top_content_right {
         width: 100%;
     }
+    .top_content_title {
+        text-align: center;
+    }
 }
 </style>

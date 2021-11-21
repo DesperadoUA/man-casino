@@ -161,4 +161,12 @@
              width: 100%;
          }
      }
+     @media (min-width: 768px) and (max-width: 1200px) {
+         .blog_card_item_left, .blog_card_item_right {
+             width: 50%;
+         }
+         .blog_card_item_excerpt {
+            height: auto;
+         }
+     }
 </style>

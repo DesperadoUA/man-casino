@@ -76,11 +76,6 @@
 </script>
 
 <style lang="scss">
-    .search {
-        @media (max-width: 991px) {
-            display: none;
-        }
-    }
     .search__cta {
         color: var(--white);
         margin-top: 15px;
@@ -226,6 +221,36 @@
             color: currentColor;
             display: block;
             text-decoration: none;
+        }
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .search-box__container {
+            padding: 15px;
+            box-sizing: border-box;
+            align-items: flex-start;
+            padding-top: 100px;
+        }
+        .form-search__close.form-search__close {
+            top:20px;
+            right: 20px;
+        }
+        .search__cta {
+            display: none;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .search-box__container {
+            padding: 15px;
+            box-sizing: border-box;
+            align-items: flex-start;
+            padding-top: 100px;
+        }
+        .form-search__close.form-search__close {
+            top:20px;
+            right: 20px;
+        }
+        .search__cta {
+            display: none;
         }
     }
 </style>

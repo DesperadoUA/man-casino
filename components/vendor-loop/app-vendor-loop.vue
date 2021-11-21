@@ -58,6 +58,8 @@
         margin-bottom: 20px;
         width: 185px;
         height: 120px;
+        border-radius: 10px;
+        overflow: hidden;
     }
     .vendor_item_link {
         width: 155px;
@@ -78,5 +80,10 @@
         color: var(--white);
         font-family: var(--font);
         font-size: 32px;
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .vendor_item {
+            width: 48%;
+        }
     }
 </style>

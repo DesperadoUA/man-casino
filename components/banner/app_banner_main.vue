@@ -66,6 +66,7 @@
         height: 330px;
         display: flex;
         align-items: center;
+        overflow: hidden;
     }
     .banner_item {
         width: 524px;
@@ -130,5 +131,63 @@
     }
     .banner_item_img {
         margin-right: 5px;
+    }
+    @media (min-width: 320px) and (max-width: 767px) {
+        .main_banner {
+            height: auto;
+            padding: 50px 0px;
+        }
+        .banner_container {
+            max-width: 100%;
+            padding-left: 15px;
+        }
+        .banner_wrapper {
+            overflow-x: scroll;
+            margin-left: 0px;
+            margin-right: 15px;
+            box-sizing: border-box;
+        }
+        .banner_item {
+            width: 250px;
+            min-width: 250px;
+            height: auto;
+        }
+        .banner_item_box {
+            flex-wrap: wrap;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .banner_item_box_left, .banner_item_box_right {
+            width: 100%;
+        }
+        .banner_item_box_right {
+            padding: 10px;
+        }
+    }
+    @media (min-width: 768px) and (max-width: 1200px) {
+        .main_banner {
+            height: auto;
+            padding: 50px 0px;
+        }
+        .banner_wrapper {
+            overflow-x: scroll;
+            margin-left: 0px;
+        }
+        .banner_item {
+            width: 250px;
+            min-width: 250px;
+            height: auto;
+        }
+        .banner_item_box {
+            flex-wrap: wrap;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .banner_item_box_left, .banner_item_box_right {
+            width: 100%;
+        }
+        .banner_item_box_right {
+            padding: 10px;
+        }
     }
 </style>
