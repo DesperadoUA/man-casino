@@ -12,6 +12,7 @@
     export default {
         name: "app-main",
         components: {Header, Footer},
+        middleware: ['getHeaders']
     }
 </script>
 <style>
