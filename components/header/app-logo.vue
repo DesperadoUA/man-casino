@@ -1,17 +1,31 @@
 <template>
     <NuxtLink no-prefetch to="/" >
-        <!--<img :src="options.logo"
+        <img :src="logo"
              class="logo"
-             width="107"
-             height="34"
-             > -->
-        <img src="/img/logo.png" width="98" height="47" class="logo">
+             width="98"
+             height="47"
+             v-if="logo !== ''"
+             >
     </NuxtLink>
 </template>
 
 <script>
 	export default {
-		name: "app-logo"
+		name: "app-logo",
+		data(){
+			return {
+				value: ''
+			}
+		},
+		computed:{
+			logo() {
+				const options = this.$store.getters['options/getOptions']
+				if(options) {
+					this.value = options.logo
+				}
+				return this.value
+			}
+		}
 	}
 </script>
 

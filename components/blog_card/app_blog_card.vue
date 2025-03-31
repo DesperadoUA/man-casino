@@ -19,7 +19,7 @@
                  </div>
                  <div class="blog_card_item_author">
                    <div class="blog_card_item_data">
-                       <div>Автор обзора: <span>{{item.author}}</span></div>
+                       <div>Автор огляду: <span>{{item.author}}</span></div>
                        <div>{{item.date | post_data}}</div>
                    </div>
                  </div>   
@@ -29,7 +29,7 @@
              </div>
          </div>
          <div class="casino_table_btn_wrapper" v-if="posts.length > (numberPostOnQuery*postCurrentPage)">
-           <button class="btn_review" @click="postShowMore">Загрузить еще</button>
+           <button class="btn_review" @click="postShowMore">Завантажити ще</button>
          </div>
       </div>
   </section>

@@ -37,7 +37,7 @@
     </div>
 </template>
 <script>
-	import DAL_Builder from '~/DAL/builder'
+	import DAL_Page from '~/DAL/static_pages'
 	export default {
 		name: "app-search",
 		data(){
@@ -57,11 +57,13 @@
 			},
 			async search(){
 				if(this.searchWord === '') return
-				const request = new DAL_Builder()
-				const response = await request.url('search')
-					.setSearch(true)
-					.searchWold(this.searchWord)
-					.get()
+				const request = {
+					type: 'page',
+					url: 'search',
+                    search_world: this.searchWord
+				}
+				console.log(request)
+				const response = await DAL_Page.getData(request)
 				if(response.data.confirm !== 'error') {
 					this.posts = response.data.body.posts
 				}

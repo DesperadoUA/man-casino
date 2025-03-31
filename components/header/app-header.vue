@@ -136,7 +136,7 @@
       height: 100vh;
       z-index: 2;
       background: rgba(0, 0, 0, 0.4);
-      right: -100%;
+      right: -110%;
       top:0;
     }
   @media (min-width: 320px) and (max-width: 767px) {

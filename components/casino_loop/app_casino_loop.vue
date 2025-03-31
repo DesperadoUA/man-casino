@@ -7,7 +7,7 @@
                   <img :src="item.thumbnail" loading="lazy" width="200" height="100" @click="refActivate(item)" />
               </div>
               <div class="casino_item_rating casino_item_column ">
-                  <div>
+                  <div class="casino_item_column_wrapper">
                       <div class="casino_item_title">{{item.title}}</div>
                       <div class="casino_item_bonus"
                            v-if="item.bonuses.length != 0"
@@ -27,7 +27,7 @@
                   </div>
               </div>
               <div class="casino_item_weiger casino_item_column ">
-                  <div v-if="item.bonuses.length >= 2" class="casino_item_packet_item">
+                  <div v-if="item.bonuses.length > 2" class="casino_item_packet_item">
                     <div class="casino_item_title_packet">{{item.bonuses[2].bonuses_title}}</div>
                     <div class="casino_item_title_packet color-gold">{{item.bonuses[2].bonuses_value}}</div>
                   </div>
@@ -36,19 +36,19 @@
                   <div class="casino_item_buttons_box">
                     <button class="btn_ref" @click="refActivate(item)">Перейти в казино</button>
                       <div class="casino_item_button_licensed">
-                          <img src="/img/license.png" v-if="item.licensed.length !== 0" />
+                          <img src="/img/license.png" v-if="item.licensed.length !== 0" width="12" height="12" />
                           <img v-for="(itemLicensed, indexLicensed) in item.licensed"
                                :key="indexLicensed"
                                :src="itemLicensed"
                                class="casino_item_licensed"
                           />
-                          <NuxtLink :to="item.permalink" class="casino_item_permalink">Обзор</NuxtLink>
+                          <NuxtLink :to="item.permalink" class="casino_item_permalink">Огляд</NuxtLink>
                       </div>
                   </div>
               </div>
           </div>  
           <div class="casino_table_btn_wrapper" v-if="posts.length > (numberPostOnQuery*postCurrentPage)">
-              <button class="btn_review" @click="postShowMore">Загрузить еще</button>
+              <button class="btn_review" @click="postShowMore">Завантажити ще</button>
           </div>
       </div>
   </section>
@@ -73,7 +73,7 @@
         },
         data(){
             return {
-                numberPostOnQuery: 7,
+                numberPostOnQuery: 10,
                 postCurrentPage: 1,
             }
         },
@@ -226,7 +226,8 @@
  .casino_item_short_desc {
      font-family: var(--font);
      color: var(--light-blue);
-     font-size: 12px;
+     font-size: 70%;
+     font-style: italic;
  }
  .casino_item_button_licensed {
      width: 100%;
@@ -273,6 +274,16 @@
     .casino_item_packet_item {
         min-width: auto;
         width: 100%;
+    }
+    .casino_item_bonus {
+        width: 100%;
+    }
+    .casino_item_column_wrapper {
+        width: 100%;
+    }
+    .casino_item_bonus span {
+        width: 100%;
+        display: block;
     }
     .casino_item_weiger {
         width: 50%;

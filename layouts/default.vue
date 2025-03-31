@@ -241,4 +241,7 @@ table {
     padding-top:40px;
     padding-bottom: 30px;
   }
+  .hide {
+    display: none!important;
+  }
 </style>

@@ -4,8 +4,8 @@
             <div class="top_content_left">
                 <img :src='value.thumbnail' 
                      loading="lazy"
-                     width="200" 
-                     height="100"
+                     width="145"
+                     height="110"
                 />
             </div>
             <div class="top_content_right">
@@ -35,7 +35,6 @@
 }
 .top_content_left {
     min-width: 20%;
-   text-align: center;
    padding:10px;
 }
 .top_content_title {
@@ -60,6 +59,9 @@
         width: 100%;
     }
     .top_content_title {
+        text-align: center;
+    }
+    .top_content_left {
         text-align: center;
     }
 }

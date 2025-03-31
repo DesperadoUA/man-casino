@@ -16,12 +16,6 @@
     <div class="footer_partners">
       <div class="container footer_partners_wrapper">
         <div class="footer_partners_left">
-           <a href="//www.dmca.com/Protection/Status.aspx?ID=0254cf77-c76d-4013-b771-c48ab480360e" 
-                title="DMCA.com Protection Status" class="dmca-badge"> 
-                <img src="https://media.onlinecasino.kyiv.ua/wp-content/uploads/2021/04/dmca_40px.png?ID=0254cf77-c76d-4013-b771-c48ab480360e"  
-                alt="DMCA.com Protection Status" 
-                loading="lazy" />
-          </a>
           <a v-for="(item, index) in options.partners" 
              :key="index" 
              :href="item.partners_link" 
@@ -29,7 +23,8 @@
              class='partners_link'
              >
             <img loading="lazy"
-                 :src='item.partners_img'            
+                 :src='item.partners_img'
+                 height="40"
              />
           </a>
         </div>

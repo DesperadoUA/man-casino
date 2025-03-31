@@ -3,8 +3,8 @@
         <app_banner />
         <app_breadcrumb  :value="data.body.breadcrumbs" />
         <app_h1 :value="data.body.h1" />
-        <app_vendor_loop :posts="posts" />
-        <app_content :value="content" bg="bg-strong-black" />
+        <app_vendor_loop :posts="data.body.vendors" />
+        <app_content :value="data.body.content" bg="bg-strong-black" />
     </main>
 </template>
 
@@ -21,12 +21,6 @@
 		components: {app_banner, app_content, app_breadcrumb, app_h1, app_vendor_loop},
 		data: () => {
 			return {
-				content: "<p>Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько " +
-				"абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить " +
-				"навык публичных выступлений в домашних условиях. При создании генератора мы использовали " +
-				"небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от " +
-				"двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и " +
-				"живым для визуально-слухового восприятия.</p>",
                 posts: [
                     {thumbnail: '/img/vendor.png', permalink: '/vendor/thunderkick/'},
 					{thumbnail: '/img/vendor.png', permalink: '/vendor/thunderkick/'},
@@ -65,7 +59,7 @@
 		async asyncData({store, route}) {
 			const request = {
 				type: 'page',
-				url: 'igrovue-avtomatu'
+				url: 'vendors'
 			}
 			const response = await DAL_Page.getData(request)
 			const body = response.data

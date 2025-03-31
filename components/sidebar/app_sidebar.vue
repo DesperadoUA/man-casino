@@ -1,6 +1,6 @@
 <template>
   <aside class="sidebar">
-      <div class="sidebar_item">Автор обзора: <span class="color-gold">{{author}}</span></div>
+      <div class="sidebar_item">Автор огляду: <span class="color-gold">{{author}}</span></div>
       <div class="sidebar_item">{{date | dateSlice}}</div>
   </aside>
 </template>

@@ -11,40 +11,26 @@
                  </div>
               <div class="casino_top_title">
                   <h1>{{value.h1}}</h1>
-                  <div class="casino_top_license" v-if="licenses.length !== 0">
+                  <div class="casino_top_license" v-if="value.licensed.length !== 0">
                       <img class="casino-card__license"
                            src="/img/license.png"
                            alt="">
-                      <img v-for="(item, index) in licenses"
+                      <img v-for="(item, index) in value.licensed"
                            :src="item"
                            :key="index"
                            class="casino_card_license"
                       >
-                      <span class="casino-card__license-txt" v-if="licenses.length !== 0">{{license}}</span>
+                      <span class="casino-card__license-txt" v-if="value.licensed.length !== 0">{{license}}</span>
                   </div>
                   <div class="casino_item_buttons_box casino_top_btn_wrapper">
                       <button class="btn_ref" @click="refActivate(value.ref)" >Перейти в казино</button>
                   </div>
               </div>
-              <div class="casino_top_bonus">
-                  <div class="casino_top_bonus_item">
-                      <div class="casino_top_bonus_item_title">
-                          Кэшбек
-                      </div>
-                      <div class="casino_top_bonus_item_title color-gold font-bold">
-                          до 7%
-                      </div>
-                  </div>
+              <div class="casino_top_bonus" v-if="value.bonuses.length > 1">
+                  
               </div>
-              <div class="casino_top_bonus">
-                  <div class="casino_top_bonus_item">
-                      <div class="casino_top_bonus_item_title">
-                          вейджер
-                      </div>
-                      <div class="casino_top_bonus_item_title color-gold font-bold">
-                          x30
-                      </div>
-                  </div>
+              <div class="casino_top_bonus" v-if="value.bonuses.length > 2">
+                  
               </div>
           </div>
       </div>
@@ -57,11 +43,7 @@
         props: ['value'],
         data(){
             return {
-				licenses: [
-					'https://media.onlinecasino.kyiv.ua/wp-content/uploads/2021/07/krail_45.png',
-                    'https://media.onlinecasino.kyiv.ua/wp-content/uploads/2021/07/curacao_45.png'
-                ],
-				license: "Лицензия"
+				license: "Ліцензия"
             }
         },
         methods: {
@@ -192,6 +174,7 @@
         .casino_top_title {
             width: 100%;
             text-align: center;
+            margin-top: 20px;
         }
         .casino_top_title h1 {
             text-align: center;

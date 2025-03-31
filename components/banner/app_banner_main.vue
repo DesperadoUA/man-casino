@@ -1,33 +1,34 @@
 <template>
-  <section class="main_banner">
+  <aside class="main_banner">
             <div class="container banner_container">
                 <div class="banner_wrapper">
                     <div class="banner_item"
-                         v-for="(item, index) in value" :key="index"
+                         v-for="(item, index) in banner" :key="index"
+                         v-if="value !== null"
                     >
                         <div class="banner_item_box">
                             <div class="banner_item_box_left">
-                                <img :src="item.thumbnail"
+                                <img :src="item.main_banner_card_img"
                                      class="banner_item_thumbnail" />
                             </div>
                             <div class="banner_item_box_right">
                                 <div class="banner_item_title">
-                                    {{item.title}}
+                                    {{item.main_banner_card_title}}
                                 </div>
                                 <div class="banner_item_short_desc">
-                                    {{item.short_desc}}
+                                    {{item.main_banner_card_description}}
                                 </div>
-                                <a :href="item.permalink" target="_blank"
+                                <a :href="item.main_banner_card_link" target="_blank"
                                    class="banner_item_permalink">
-                                    <img src="/img/telega.png" class="banner_item_img">
-                                    Подписаться
+                                    <img src="/img/telega.png" class="banner_item_img" width="15" height="12">
+                                    Підписатися
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-  </section>
+  </aside>
 </template>
 
 <script>
@@ -35,28 +36,19 @@
         name: "app_banner",
         data(){
             return {
-                value: [
-                    {
-                    	thumbnail: '/img/bonus_1.png',
-                        title: 'Розыгрыш PS5',
-                        short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
-                        permalink: '/telega-1'
-                    },
-					{
-						thumbnail: '/img/bonus_2.png',
-						title: 'Забери виски Jack Daniel’s ',
-						short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
-						permalink: '/telega-2'
-					},
-					{
-						thumbnail: '/img/bonus_1.png',
-						title: 'Розыгрыш PS5',
-						short_desc: 'Подпишись на наш телеграм канал, и прими участие в розыгрыше',
-						permalink: '/telega-3'
-					}
-                ]
+                value: []
             }
         },
+		computed:{
+            banner() {
+				const options = this.$store.getters['options/getOptions']
+                if(options) {
+					this.value = options.banner_card
+                }
+                return this.value
+
+			}
+		}
     }
 </script>
 
@@ -78,10 +70,8 @@
         overflow: visible;
     }
     .banner_wrapper {
-        margin-left: -200px;
-    }
-    .banner_wrapper {
         display: flex;
+        justify-content: space-around;
     }
     .banner_item_box {
         width: 100%;
@@ -134,7 +124,7 @@
     }
     @media (min-width: 320px) and (max-width: 767px) {
         .main_banner {
-            height: auto;
+            min-height: 375px;
             padding: 50px 0px;
         }
         .banner_container {
@@ -146,6 +136,7 @@
             margin-left: 0px;
             margin-right: 15px;
             box-sizing: border-box;
+            justify-content: flex-start;
         }
         .banner_item {
             width: 250px;

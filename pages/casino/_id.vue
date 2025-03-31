@@ -1,8 +1,9 @@
 <template>
   <main>
-    <app_banner />
+    <!--<app_banner />-->
     <app_breadcrumb  :value="data.body.breadcrumbs" />
     <app_casino_top  :value="data.body" />
+    <app_preview :value="data.body.preview" v-if="data.body.preview !== ''"  bg="bg-strong-blue"/>
     <app_bonuses     :value="data.body.event" v-if="data.body.event.length !== 0" />
     <app_casino_details :value="data.body" />
     <app_content     :value="data.body.content" bg="bg-strong-blue" />
@@ -18,14 +19,15 @@
     import app_casino_top from '~/components/casino_top/app_casino_top'
     import app_bonuses from '~/components/bonuses/app_bonuses.vue'
     import app_content from '~/components/content/app-content'
+    import app_preview from '~/components/preview/app-preview'
     import app_faq from '~/components/faq/app_faq'
-	import app_banner from '~/components/banner/app_banner_main'
+	  import app_banner from '~/components/banner/app_banner_main'
     import app_casino_details from '~/components/casino_details/app-casino-details'
     import config from '~/config/index'
     export default {
         name: "app_single_casino",
         components: {app_content, app_breadcrumb, app_casino_top, app_faq,
-            app_bonuses, app_banner, app_casino_details},
+            app_bonuses, app_banner, app_casino_details, app_preview},
         data: () => {
             return {
             }

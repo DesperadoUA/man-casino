@@ -3,19 +3,19 @@
       <app_banner />
       <app_breadcrumb  :value="data.body.breadcrumbs" />
       <app_h1 :value="data.body.h1" />
-      <app_casino_loop :posts="data.body.casino" bg="bg-strong-blue" />
+      <app_top_bonuses :value="data.body.bonuses" v-if="data.body.bonuses.length !== 0" />
       <app_content :value="data.body.content" bg="bg-strong-black"/>
   </main>
 </template>
 
 <script>
     import DAL_Page from '~/DAL/static_pages'
-	import app_h1 from '~/components/h1/app-h1'
+	  import app_h1 from '~/components/h1/app-h1'
     import app_content from '~/components/content/app-content'
-    import app_casino_loop from '~/components/casino_loop/app_casino_loop'
     import app_banner from '~/components/banner/app_banner_main'
-	import app_breadcrumb from '~/components/breadcrumb/app_breadcrumb'
+	  import app_breadcrumb from '~/components/breadcrumb/app_breadcrumb'
     import config from '~/config/index'
+    import app_top_bonuses from "../components/top-bonuses/app_top_bonuses"
 export default {
     name: "bonuses",
     data: () => {
@@ -23,7 +23,7 @@ export default {
             data: {}
         }
     },
-    components: {app_content, app_casino_loop, app_banner, app_breadcrumb, app_h1},
+    components: {app_top_bonuses, app_content, app_banner, app_breadcrumb, app_h1},
     async asyncData({store, route}) {
         const request = {
             type: 'page',

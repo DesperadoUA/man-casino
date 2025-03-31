@@ -10,7 +10,8 @@ export default {
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: '' }
+			{ hid: 'description', name: 'description', content: '' },
+			{ name: 'copyrighted-site-verification', content: '275f3722d26d1ab0' },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -55,9 +56,13 @@ export default {
 	},
 	sitemap: {
 		exclude: [
-			'/blog',
-			'/bonuses',
-			'/igrovue-avtomatu'
+		  '/blog/',
+		  '/bonuses/',
+		  '/igrovue-avtomatu/',
+		  '/payments',
+		  '/vendors',
+		  '/blog',
+		  '/bonuses'
 		],
 		routes: async () => {
 		const sitemapData = {
@@ -65,8 +70,8 @@ export default {
 			url: ''
 		}
 		const {data} = await DAL_Pages.getData(sitemapData)
-	const {static_page, casino, blog, vendors, payments} = data
-	return static_page.concat(casino, blog, vendors, payments)
-}
-}
+		const {static_page, casino, blog, vendors, payments} = data
+		return static_page.concat(casino, blog, vendors, payments)
+		}
+	}
 }

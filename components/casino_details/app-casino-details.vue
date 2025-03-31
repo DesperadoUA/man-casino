@@ -1,11 +1,11 @@
 <template>
     <section class="casino_details">
         <div class="container">
-            <div class="casino_top_desc_row" v-if="category.length !== 0">
-                <div class="casino_top_desc">Категории автоматов:</div>
+            <div class="casino_top_desc_row" v-if="value.category.length !== 0">
+                <div class="casino_top_desc">Категорії азартних ігор:</div>
                 <div class="casino_top_desc_value">
                     <ul class="casino_top_list">
-                        <li v-for="(item, index) in category"
+                        <li v-for="(item, index) in value.category"
                             :key="index" >
                             <span class="casino_top_list_item" v-html="item"></span>
                         </li>
@@ -13,47 +13,45 @@
                 </div>
             </div>
             <div class="casino_top_desc_row" v-if="value.relative_payments.length !== 0">
-                    <div class="casino_top_desc">Методы оплаты:</div>
+                    <div class="casino_top_desc">Методи оплати:</div>
                     <div class="casino_top_desc_value">
                         <ul class="casino_top_list">
                             <li v-for="(item, index) in value.relative_payments"
-                                :key="index" class="bg-opacity-white border-none">
-                                <NuxtLink no-prefetch :to="item.permalink" v-html="item.title"></NuxtLink>
+                                :key="index" class="bg-opacity-white border-none" v-html="item.title">
                             </li>
                         </ul>
                     </div>
                 </div>
             <div class="casino_top_desc_row" v-if="value.relative_pay_out.length !== 0">
-                    <div class="casino_top_desc">Методы выплат:</div>
+                    <div class="casino_top_desc">Методи виплат:</div>
                     <div class="casino_top_desc_value">
                         <ul class="casino_top_list ">
                             <li v-for="(item, index) in value.relative_pay_out"
-                                :key="index" class="green" >
-                                <NuxtLink no-prefetch :to="item.permalink" v-html="item.title"></NuxtLink>
+                                :key="index" class="green" v-html="item.title">
                             </li>
                         </ul>
                     </div>
                 </div>
             <div class="casino_top_desc_row" v-if="value.relative_vendors.length !== 0">
-                    <div class="casino_top_desc">Платформы:</div>
+                    <div class="casino_top_desc">Платформи:</div>
                     <div class="casino_top_desc_value">
                         <ul class="casino_top_list">
                             <li v-for="(item, index) in value.relative_vendors"
                                 :key="index"
                                 class="bg-opacity-white border-none"
+                                v-html="item.title"
                             >
-                                <NuxtLink no-prefetch :to="item.permalink" v-html="item.title"></NuxtLink>
                             </li>
                         </ul>
                     </div>
                 </div>
-            <div class="casino_top_desc_row" v-if="currency.length !== 0">
-                <div class="casino_top_desc">Игровые валюты:</div>
+            <div class="casino_top_desc_row" v-if="value.currency.length !== 0">
+                <div class="casino_top_desc">Ігрові валюти:</div>
                 <div class="casino_top_desc_value">
                     <ul class="casino_top_list">
-                        <li v-for="(item, index) in currency"
+                        <li v-for="(item, index) in value.currency"
                             :key="index" >
-                            <span class="casino_top_list_item" v-html="item"></span>
+                            <span class="casino_top_list_item" v-html="item.casino_currency"></span>
                         </li>
                     </ul>
                 </div>
@@ -73,9 +71,8 @@
         },
         data:()=>{
 			return{
-				category: ['Игровые автоматы', 'Покер', 'Рулетка', 'Однорукие бандиты', 'Настольные игры',
-                'кости', 'Аркадные игры'],
-                currency: ['$ - USD', '€ - EUR', '₽ -RUB', '₸ -KZT', 'zł - PLN', '₴ - UAH']
+				category: ['Ігрові автомати', 'Покер', 'Рулетка', 'Однорукі бандити', 'Настільні ігри',
+                'Кості', 'Аркадні ігри']
             }
         }
 	}

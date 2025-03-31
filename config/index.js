@@ -1,3 +1,3 @@
 export default {
-    BASE_URL: 'https://onlinecasino.kyiv.ua'
+    BASE_URL: 'https://onlinecasino.men'
 }

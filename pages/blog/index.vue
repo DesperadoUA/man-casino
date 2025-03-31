@@ -4,7 +4,7 @@
       <app_breadcrumb  :value="data.body.breadcrumbs" />
       <app_h1 :value="data.body.h1" />
       <app_blog_card :posts="data.body.blog" />
-      <app_content :value="data.body.content" v-if="data.body.content !== ''" />
+      <app_content :value="data.body.content" v-if="data.body.content !== ''"  bg="bg-strong-black"/>
   </main>
 </template>
 
